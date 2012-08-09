@@ -8,8 +8,6 @@ django-profiletools
 About
 =====
 
-I got tired of cutting and pasting these components from one project to another. So I released django-profiletools.
-
 The lazy loading of profiles was inspired by the rather incredible Noah Kantrowitz.
 
 Features
