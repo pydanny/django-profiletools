@@ -13,7 +13,6 @@ class LazyProfileMiddleware(object):
 
     def process_request(self, request):
         self.user = request.user
-        #setattr(request.__class__, get_my_profile_module_name(), self.lazy_profile)
         setattr(request.__class__,
                 my_profile_module_name,
                 SimpleLazyObject(lambda: get_profile(self.user)))
