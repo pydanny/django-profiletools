@@ -1,4 +1,4 @@
-from profiletools.utils import get_profile
+from profiletools.utils import get_profile, get_my_profile_module_name
 
 
 class LazyProfileMiddleware(object):
@@ -12,4 +12,4 @@ class LazyProfileMiddleware(object):
 
     def process_request(self, request):
         self.user = request.user
-        request.__class__.my_profile = self.lazy_profile
+        setattr(request.__class__, get_my_profile_module_name(), self.lazy_profile)
