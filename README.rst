@@ -73,4 +73,4 @@ In your class-based views::
 
 Call my_profile as many times as you want, it only loads once. So if you call it 100 times in a view, the ``SQL SELECT`` is only done the first time.
 
-.. note:: If you are using the ``members.Member'``example, you'll need to call that by using ``request.my_member``.
+.. note:: If you are using the ``members.Member`` example, you'll need to call that by using ``request.my_member``.
