@@ -71,6 +71,7 @@ In your class-based views::
 
 	profile = self.request.my_profile	
 
-Call my_profile as many times as you want, it only loads once. So if you call it 100 times in a view, the ``SQL SELECT`` is only done the first time.
+Call my_profile as many times as you want, it only loads once. So if you call it 100 times in a view, the ``SQL SELECT`` is only done the first time.  If no user is found then the my_profile call result is ``None``, which makes it easier to handle templates which need to be able to handle unauthenticated users (like the `about` page).
+
 
 **note:** If you are using the ``members.UserProfile`` example, you'll need to call that by using ``request.my_userprofile``.
