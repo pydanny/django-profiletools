@@ -54,4 +54,23 @@ Based on that, your profile model should resemble something like::
 	    def __unicode__(self):
 	        return self.user.username
 
+.. note:: If you don't use profiles.models.Profile, say members.models.Member go ahead and change the AUTH_PROFILE_MODULE to "members.Member".
 
+Usage
+------
+
+In your templates::
+
+	{{ request.my_profile }}
+
+In your functional views::
+
+	profile = request.my_profile
+
+In your class-based views::
+
+	profile = self.request.my_profile	
+
+Call my_profile as many times as you want, it only loads once. So if you call it 100 times in a view, the ``SQL SELECT`` is only done the first time.
+
+.. note:: If you are using the ``members.Member'``example, you'll need to call that by using ``request.my_member``.
