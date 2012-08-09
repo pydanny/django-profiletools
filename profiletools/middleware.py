@@ -1,4 +1,9 @@
+from django.utils.functional import SimpleLazyObject
+
 from profiletools.utils import get_profile, get_my_profile_module_name
+
+# preload this variable
+my_profile_module_name = get_my_profile_module_name()
 
 
 class LazyProfileMiddleware(object):
@@ -6,10 +11,9 @@ class LazyProfileMiddleware(object):
         This reduces the number of queries per request substantially
     """
 
-    @property
-    def lazy_profile(self):
-        return get_profile(self.user)
-
     def process_request(self, request):
         self.user = request.user
-        setattr(request.__class__, get_my_profile_module_name(), self.lazy_profile)
+        #setattr(request.__class__, get_my_profile_module_name(), self.lazy_profile)
+        setattr(request.__class__,
+                my_profile_module_name,
+                SimpleLazyObject(lambda: get_profile(self.user)))
