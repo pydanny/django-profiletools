@@ -6,7 +6,7 @@ LONG_DESCRIPTION = open('README.rst').read()
 
 setup(
     name='django-profiletools',
-    version=mongonaut.__version__,
+    version=profiletools.__version__,
     description="Tools for Profile models in Django.",
     long_description=LONG_DESCRIPTION,
     classifiers=[
