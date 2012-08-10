@@ -5,11 +5,6 @@ django-profiletools
 :Version: 0.1.2
 :Author: Daniel Greenfeld (http://pydanny.com)
 
-About
-=====
-
-The lazy loading of profiles was inspired by the rather incredible Noah Kantrowitz.
-
 Features
 ========
 
@@ -73,3 +68,8 @@ Call my_profile as many times as you want, it only loads once. So if you call it
 
 
 **note:** If you are using the ``members.UserProfile`` example, you'll need to call that by using ``request.my_userprofile``.
+
+Inspiration
+===========
+
+The lazy loading of profiles was inspired by the rather incredible Noah Kantrowitz.
