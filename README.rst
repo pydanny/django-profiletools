@@ -2,7 +2,7 @@
 django-profiletools
 ===================
 :Info: Tools for Profile models in Django.
-:Version: 0.1.1
+:Version: 0.1.2
 :Author: Daniel Greenfeld (http://pydanny.com)
 
 About

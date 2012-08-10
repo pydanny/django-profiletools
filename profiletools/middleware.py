@@ -15,4 +15,4 @@ class LazyProfileMiddleware(object):
         self.user = request.user
         setattr(request.__class__,
                 my_profile_module_name,
-                SimpleLazyObject(lambda: get_profile(self.user)))
+                SimpleLazyObject(lambda: get_profile(request.user)))
