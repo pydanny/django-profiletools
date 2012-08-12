@@ -80,6 +80,33 @@ Call my_profile as many times as you want, it only loads once. So if you call it
 
 .. note:: If you are using the ``members.UserProfile`` example, you'll need to call that by using ``request.my_userprofile``.
 
+Problems with Python's "**is**" evaluation and "**type**" built-in
+==================================================================
+
+If you use the **is** evaluation before doing anything else with the my_profile object, it will behave in a slightly unexpected manner:
+
+The  **will always return false**. For example::
+
+    >>> print(request.my_profile is None)
+    False
+    >>> p = request.user.get_profile()
+    >>> print(request.my_profile is p)
+    False
+    
+    
+Also, the **type** built-in will return a ``django.utils.functional.SimpleLazyObject`` object::
+
+    >>> print(type)
+    <class 'django.utils.functional.SimpleLazyObject'>
+
+Keep in mind what is placed in the ``my_profile`` value is not a ``ModelClass``
+instance or ``None`` object, but rather a ``django.utils.functional.SimpleLazyObject``.
+
+**How to evaluate the my_profile object**
+
+Use ``==`` to evaluate the my_profile object. This forces the object to be evaluated
+and won't return frustrating false-positives.
+
 
 Indices and tables
 ==================
