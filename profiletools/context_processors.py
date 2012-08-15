@@ -6,7 +6,8 @@ def fetch_profile(request):
 
     context = {}
     if request.user.is_authenticated():
-        profile = request.my_profile
-        if profile:
-            context[get_my_profile_module_name()] = profile
+        profile_module_name = get_my_profile_module_name()
+        profile = getattr(request, profile_module_name, None)
+        if profile != None:
+            context[profile_module_name] = profile
     return context
