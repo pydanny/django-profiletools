@@ -49,7 +49,7 @@ class ProfileUpdateNoSlugView(ProfileUpdateView):
         return PROFILE_MODEL.objects.get(user=self.request.user)
 
 
-class DefaultProfileUpdateNoSlugView(LoginRequiredMixin, UpdateView):
+class DefaultProfileUpdateNoSlugView(ProfileUpdateView):
 
     def get_object(self):
         profile, created = PROFILE_MODEL.objects.get_or_create(
