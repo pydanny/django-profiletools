@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import get_model
 
 
 def get_profile(user):
@@ -26,3 +27,10 @@ def get_my_profile_module_name():
     """
     my_profile_module_name = settings.AUTH_PROFILE_MODULE.split('.')[-1].lower()
     return "my_{0}".format(my_profile_module_name)
+
+
+def get_profile_model():
+    
+    app_name = settings.AUTH_PROFILE_MODULE.split('.')[-2]    
+    model_name = settings.AUTH_PROFILE_MODULE.split('.')[-1]
+    return get_model(app_name, model_name)
