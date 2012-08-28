@@ -2,6 +2,8 @@
 CHANGELOG
 =========
 
+# 0.2.0 Added in some default views and a form.
+
 # 0.1.3 Fixed problem with profile model name differences between projects
 
 # 0.1.2 Improved multi-threading

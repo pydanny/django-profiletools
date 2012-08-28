@@ -9,7 +9,13 @@ from profiletools.utils import get_profile_model
 PROFILE_MODEL = get_profile_model()
 
 class ProfileDetailView(LoginRequiredMixin, DetailView):
-    
+    """ Called thus with an ID::
+
+        url(regex=r'^/(?P<id>\d+)/$',
+            view=views.ProfileDetailView.as_view(),
+            name='profile_update'),
+
+    """
     model = PROFILE_MODEL
 
 
