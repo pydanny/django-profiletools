@@ -1,4 +1,3 @@
-from django.core.urlresolvers import reverse
 from django.views.generic import DetailView, UpdateView
 
 from braces.views import LoginRequiredMixin
@@ -8,10 +7,11 @@ from profiletools.utils import get_profile_model
 
 PROFILE_MODEL = get_profile_model()
 
+
 class ProfileDetailView(LoginRequiredMixin, DetailView):
     """ Called thus with an ID::
 
-        url(regex=r'^/(?P<id>\d+)/$',
+        url(regex=r'^/(?P<pk>\d+)/$',
             view=views.ProfileDetailView.as_view(),
             name='profile_update'),
 
@@ -30,7 +30,7 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
 
         Or thus with an ID::
 
-            url(regex=r'^/(?P<id>\d+)/$',
+            url(regex=r'^/(?P<pk>\d+)/$',
                 view=views.ProfileUpdateView.as_view(
                     success_url="/",
                 ),

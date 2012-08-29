@@ -19,9 +19,9 @@ def get_profile(user):
 
 def get_my_profile_module_name():
     """ Figures out the name of the profile model name from the AUTH_PROFILE_MODULE setting
-    
+
         Examples:
-        
+
             my_profile = profiles.Profile
             my_membership = members.Membership
     """
@@ -30,7 +30,7 @@ def get_my_profile_module_name():
 
 
 def get_profile_model():
-    
-    app_name = settings.AUTH_PROFILE_MODULE.split('.')[-2]    
+
+    app_name = settings.AUTH_PROFILE_MODULE.split('.')[-2]
     model_name = settings.AUTH_PROFILE_MODULE.split('.')[-1]
     return get_model(app_name, model_name)

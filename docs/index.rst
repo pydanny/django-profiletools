@@ -22,6 +22,7 @@ Features
 
 * Lazy loading of your authenticated `profile` record across the `request` object lifetime. That means in the Python code and the templates.
 * Name your profile model anything you want in `settings.AUTH_PROFILE_MODULE`.
+* Prebuilt views and forms to go along with your custom profile model.
 
 Installation
 ------------
