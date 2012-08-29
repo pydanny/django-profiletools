@@ -9,4 +9,5 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = PROFILE_MODEL
-        exclude = ('user', )
+        exclude = getattr(PROFILE_MODEL, "exclude", ('user', ))
+        fields = getattr(PROFILE_MODEL, "fields", ())        
