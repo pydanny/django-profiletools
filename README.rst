@@ -49,7 +49,7 @@ Based on that, your profile model should resemble something like::
 
 **note:** If you don't use ``profiles.models.Profile``, say ``members.models.UserProfile`` go ahead and change the ``AUTH_PROFILE_MODULE`` to "members.UserProfile".
 
-Usage
+Basic Usage
 ============
 
 In your templates::

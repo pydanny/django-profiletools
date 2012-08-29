@@ -14,8 +14,8 @@ docs/proBlue/theme.conf
 docs/proBlue/static/proBlue.css
 profiletools/__init__.py
 profiletools/context_processors.py
+profiletools/forms.py
 profiletools/middleware.py
 profiletools/models.py
-profiletools/tests.py
 profiletools/utils.py
 profiletools/views.py
