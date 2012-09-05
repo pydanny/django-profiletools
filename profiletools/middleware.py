@@ -16,3 +16,10 @@ class LazyProfileMiddleware(object):
         setattr(request.__class__,
                 my_profile_module_name,
                 SimpleLazyObject(lambda: get_profile(request.user)))
+
+
+                from django.core.urlresolvers import reverse
+                from django.http import HttpResponseRedirect
+                from django.contrib import messages
+
+

@@ -1,4 +1,4 @@
-from django.views.generic import DetailView, UpdateView
+from django.views.generic import DetailView, UpdateView, ListView
 
 from braces.views import LoginRequiredMixin
 
@@ -62,3 +62,23 @@ class DefaultProfileUpdateNoSlugView(ProfileUpdateView):
             user=self.request.user
         )
         return profile
+
+
+class ProfileListView(ListView):
+    """ Called thus::
+
+        url(regex=r'^$',
+            view=views.ProfileListView.as_view(),
+            name='profile_list'),
+    """
+    model = PROFILE_MODEL
+
+
+class LoginRequireProfileListView(LoginRequiredMixin, ListView):
+    """ Called thus::
+
+        url(regex=r'^$',
+            view=views.LoginRequireProfileListView.as_view(),
+            name='profile_list'),
+    """
+    model = PROFILE_MODEL
