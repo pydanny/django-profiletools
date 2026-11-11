@@ -68,6 +68,14 @@ Call my_profile as many times as you want, it only loads once. So if you call it
 
 **note:** If you are using the ``members.UserProfile`` example, you'll need to call that by using ``request.my_userprofile``.
 
+Forms and views
+===============
+
+The package also provides ``ProfileForm`` and profile detail, update and list
+views. See the `forms and views documentation
+<https://github.com/pydanny/django-profiletools/blob/master/docs/index.rst#forms-and-views>`_ for
+field selection, current-user editing and access-control considerations.
+
 Problems with Python's "**is**" evaluation and "**type**" built-in
 ==================================================================
 
